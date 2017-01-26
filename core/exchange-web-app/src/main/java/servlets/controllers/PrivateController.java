@@ -62,8 +62,6 @@ public class PrivateController extends HttpServlet {
         User user;
         switch (request.getServletPath()) {
             case "/exchange":
-                System.out.println("request = [" + request + "], response = [" + response + "]");
-                System.out.println("request.getUserPrincipal = " + request.getUserPrincipal());
                 user = exchange.getUser(request.getUserPrincipal().getName());
                 List<Trade> trades = exchange.getAllTrades();
                 if (trades == null) trades = new ArrayList<>();
