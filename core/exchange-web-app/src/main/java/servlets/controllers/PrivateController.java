@@ -1,8 +1,11 @@
 package servlets.controllers;
 
+import beans.CallManager;
 import beans.Exchange;
 import entities.Trade;
 import entities.User;
+import model.Tariff;
+import model.entities.Call;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -15,11 +18,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "PrivateController", urlPatterns = {"/trade", "/exchange", "/logout" })
+@WebServlet(name = "PrivateController", urlPatterns = {"/trade", "/exchange", "/calls", "/logout" })
 public class PrivateController extends HttpServlet {
 
     @EJB
     Exchange exchange;
+
+    @EJB
+    CallManager callManager;
 
     public PrivateController() {
         super();
@@ -61,6 +67,13 @@ public class PrivateController extends HttpServlet {
 
         User user;
         switch (request.getServletPath()) {
+            case "/calls":
+                List<Call> calls = callManager.getCalls();
+                Tariff tariff = Tariff.getDefaultLocalTariff();
+                request.setAttribute("calls", calls);
+                request.setAttribute("tariff", tariff);
+                request.getRequestDispatcher("WEB-INF/private/calls.jsp").forward(request, response);
+                break;
             case "/exchange":
                 user = exchange.getUser(request.getUserPrincipal().getName());
                 List<Trade> trades = exchange.getAllTrades();

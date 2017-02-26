@@ -20,6 +20,7 @@
             <description/>
             <url-pattern>/test</url-pattern>
             <url-pattern>/exchange</url-pattern>
+            <url-pattern>/calls</url-pattern>
             <url-pattern>/trade</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>

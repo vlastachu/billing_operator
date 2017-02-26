@@ -15,7 +15,7 @@ public class TariffTest {
     public void getCallCost() throws Exception {
         Tariff freeTariff = new Tariff(0);
         Tariff notFreeTariff = new Tariff(100);
-        Call sampleCall = new Call(1, "1", 20);
+        Call sampleCall = new Call("1", 20);
         assertEquals(0, freeTariff.getCallCost(sampleCall));
         assertEquals(2000, notFreeTariff.getCallCost(sampleCall));
     }

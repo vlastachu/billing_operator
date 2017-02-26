@@ -5,6 +5,9 @@ import org.junit.*;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -27,6 +30,7 @@ public class CallTest {
     public void beginTransaction() {
         em = emf.createEntityManager();
         em.getTransaction().begin();
+        em.createQuery("DELETE FROM Call").executeUpdate();
     }
 
     @After
@@ -42,11 +46,16 @@ public class CallTest {
 
     @Test
     public void addRemoveCall() {
-        Call call = new Call();
-        call.setPhoneNumber("111");
-        call.setDuration(1);
+        Call call = new Call("111", 1);
         em.persist(call);
         assertTrue(em.contains(call));
+
+        Query query = em.createNamedQuery("Call.getAll");
+        List<Call> calls = (List<Call>)query.getResultList();
+        assertEquals(1, calls.size());
+        Call dbCall = calls.get(0);
+        assertNotNull(dbCall);
+        assertSame(call, dbCall);
         em.remove(call);
     }
 }
