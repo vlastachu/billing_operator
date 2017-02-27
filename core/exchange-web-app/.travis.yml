@@ -1,0 +1,6 @@
+language: java
+sudo: false
+script: mvn clean -f ./core/exchange-web-app/
+services: postgresql
+before_script:
+  - psql -c 'create database dev_test_db;' -U postgres
