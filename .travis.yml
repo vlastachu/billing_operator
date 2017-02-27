@@ -4,6 +4,10 @@ jdk:
 sudo: false
 script: mvn clean verify jacoco:report -f ./core/exchange-web-app/
 services: postgresql
+cache:
+  directories:
+    - .autoconf
+    - $HOME/.m2
 before_script:
   - psql -c 'create database dev_test_db;' -U postgres
 after_success:
