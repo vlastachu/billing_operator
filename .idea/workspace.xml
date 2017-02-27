@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e0428f-1734-4539-96df-c2dc95b8838a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_main_extras_glassfish_embedded_all_3_1_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_9_4_1212.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/java/beans/AccountManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/java/beans/BillingAdministration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/java/beans/CallManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/java/beans/TariffManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/java/beans/impl/AccountManagerImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/java/beans/impl/CallManagerImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/java/beans/impl/TariffManagerImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/private/calls.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/css/auth.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/css/normalize.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/exchange-web-app/src/main/java/model/entities/Call.java" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/java/model/entities/Call.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/exchange-web-app/src/main/java/servlets/controllers/PrivateController.java" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/java/servlets/controllers/PrivateController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/exchange-web-app/src/tests/model/TariffTest.java" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/tests/model/TariffTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/exchange-web-app/src/tests/model/entities/CallTest.java" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/tests/model/entities/CallTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db-src/oracle/filldata.sql" afterPath="$PROJECT_DIR$/db-src/oracle/filldata.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/common/authorization.jsp" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/common/authorization.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/css/style.css" afterPath="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/css/style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/core/exchange-web-app/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,26 +30,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AccountManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/java/beans/AccountManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CallManagerImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/java/beans/impl/CallManagerImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="20" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PrivateController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/java/servlets/controllers/PrivateController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -86,16 +50,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CSVHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/java/Util/CSVHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="calls.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/private/calls.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -106,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CallTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CallTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/tests/model/entities/CallTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="814">
@@ -116,11 +70,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="authorization.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/common/authorization.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="112" column="13" lean-forward="false" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="13" />
+              <folding>
+                <element signature="n#style#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            <state relative-caret-position="462">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -136,16 +102,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exchange.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/private/exchange.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -155,6 +111,7 @@
         <option value="Class" />
         <option value="Interface" />
         <option value="Jsp File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -166,6 +123,10 @@
       <find>seq</find>
       <find>excha</find>
       <find>exch</find>
+      <find>conta</find>
+      <find>height</find>
+      <find>-</find>
+      <find>plac</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/core/exchange-web-app/src/main/resources/test_csv</dir>
@@ -214,6 +175,10 @@
         <option value="$PROJECT_DIR$/db-src/oracle/filldata.sql" />
         <option value="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/core/exchange-web-app/src/main/java/servlets/controllers/PrivateController.java" />
+        <option value="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/css/normalize.css" />
+        <option value="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/css/style.css" />
+        <option value="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/common/authorization.jsp" />
+        <option value="$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/css/auth.css" />
       </list>
     </option>
   </component>
@@ -733,6 +698,7 @@
     <property name="FullScreen" value="true" />
     <property name="SearchEverywhereHistoryKey" value=".jsp&#9;FILE&#9;file:///Users/user/IdeaProjects/fuck/exchange/core/exchange-web-app/src/main/webapp/WEB-INF/private/exchange.jsp" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/SQL Dialects" value="PostgreSQL" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -1446,7 +1412,7 @@
       <workItem from="1484600552559" duration="2188000" />
       <workItem from="1485168884107" duration="26000000" />
       <workItem from="1487358003938" duration="83000" />
-      <workItem from="1488120468974" duration="9274000" />
+      <workItem from="1488120468974" duration="16141000" />
     </task>
     <task id="LOCAL-00001" summary="get this shit works again">
       <created>1485372351698</created>
@@ -1462,7 +1428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1485390790623</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="calls page now works and call db test passed">
+      <created>1488137430687</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1488137430687</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1498,7 +1471,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37545000" />
+    <option name="totallyTimeSpent" value="44412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="0" width="1920" height="1080" extended-state="0" />
@@ -1508,7 +1481,7 @@
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1526,11 +1499,11 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3281704" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970297" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18370607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1796875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1552,7 +1525,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="get this shit works again" />
     <MESSAGE value="some persistence with tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="some persistence with tests" />
+    <MESSAGE value="calls page now works and call db test passed" />
+    <option name="LAST_COMMIT_MESSAGE" value="calls page now works and call db test passed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1565,14 +1539,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/java/tests/TariffTest.java" />
-    <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/resources/test_csv/empty.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/resources/test_csv/empty_line.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -1799,14 +1765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/private/exchange.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/java/model/Account.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -1912,26 +1870,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/private/calls.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/common/authorization.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1960,18 +1902,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/tests/model/entities/CallTest.java">
+    <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/private/exchange.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="50" column="33" lean-forward="false" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+        <state relative-caret-position="44">
+          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="4" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/css/normalize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/private/calls.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/css/auth.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1474">
+          <caret line="67" column="44" lean-forward="false" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        <state relative-caret-position="462">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/main/webapp/WEB-INF/common/authorization.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="112" column="13" lean-forward="false" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/exchange-web-app/src/tests/model/entities/CallTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="50" column="33" lean-forward="false" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
           <folding />
         </state>
       </provider>
