@@ -2,7 +2,9 @@ language: java
 jdk:
   - oraclejdk8
 sudo: false
-script: mvn clean verify -f ./core/exchange-web-app/
+script: mvn clean verify jacoco:report -f ./core/exchange-web-app/
 services: postgresql
 before_script:
   - psql -c 'create database dev_test_db;' -U postgres
+after_success:
+  - mvn coveralls:report
