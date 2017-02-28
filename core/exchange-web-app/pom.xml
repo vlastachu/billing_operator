@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>vlastachu</groupId>
-    <artifactId>billing-operator</artifactId>
+    <artifactId>exchange</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
@@ -46,11 +46,6 @@
             <version>0.7.9</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.eluder.coveralls</groupId>
-            <artifactId>coveralls-maven-plugin</artifactId>
-            <version>4.3.0</version>
-        </dependency>
 
         <dependency>
             <groupId>javax</groupId>

@@ -1,9 +1,11 @@
 package servlets.controllers;
 
+import beans.AccountManager;
 import beans.CallManager;
 import beans.Exchange;
 import entities.Trade;
 import entities.User;
+import model.Account;
 import model.Tariff;
 import model.entities.Call;
 
@@ -18,7 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "PrivateController", urlPatterns = {"/trade", "/exchange", "/calls", "/logout" })
+@WebServlet(name = "PrivateController", urlPatterns = {"/trade", "/exchange", "/calls", "/accounts", "/logout" })
 public class PrivateController extends HttpServlet {
 
     @EJB
@@ -26,6 +28,9 @@ public class PrivateController extends HttpServlet {
 
     @EJB
     CallManager callManager;
+
+    @EJB
+    AccountManager accountManager;
 
     public PrivateController() {
         super();
@@ -73,6 +78,11 @@ public class PrivateController extends HttpServlet {
                 request.setAttribute("calls", calls);
                 request.setAttribute("tariff", tariff);
                 request.getRequestDispatcher("WEB-INF/private/calls.jsp").forward(request, response);
+                break;
+            case "/accounts":
+                List<Account> accounts = accountManager.getAll();
+                request.setAttribute("accounts", accounts);
+                request.getRequestDispatcher("WEB-INF/private/accounts.jsp").forward(request, response);
                 break;
             case "/exchange":
                 user = exchange.getUser(request.getUserPrincipal().getName());

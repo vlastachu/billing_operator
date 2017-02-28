@@ -10,7 +10,7 @@
         <br>
         <br>
         <h1>Wellcome to stock exchange!</h1>
-        <p><a href="/ewa-app/exchange">Log in</a></p>
+        <p><a href="/ewa-app/calls">Log in</a></p>
     </div>
     </body>
 </html>
