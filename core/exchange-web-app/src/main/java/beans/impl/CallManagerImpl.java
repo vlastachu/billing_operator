@@ -13,7 +13,7 @@ import java.util.List;
 public class CallManagerImpl implements CallManager {
 
     @PersistenceContext(unitName = "em")
-    private EntityManager em;
+    EntityManager em;
 
     @Override
     public List<Call> getCalls() {
