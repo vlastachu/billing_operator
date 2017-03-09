@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Cacheable(false)
 @Table(name = "CALLS")
 @NamedQueries({
-        @NamedQuery(name = "Call.getAllByPhoneNumber", query = "SELECT call FROM Call call WHERE call.phoneNumber = :phoneNumber"),
+        @NamedQuery(name = "Call.getAllByPhoneNumber", query = "SELECT call FROM Call call WHERE call.phoneNumber LIKE CONCAT('%', :phoneNumber, '%')"),
         @NamedQuery(name = "Call.getAll", query = "SELECT call FROM Call call")
 })
 public class Call {

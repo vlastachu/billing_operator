@@ -2,46 +2,13 @@ package model.entities;
 
 import org.junit.*;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.Query;
 import java.util.List;
+import test_utils.DBDependentTest;
 
 import static org.junit.Assert.*;
 
-public class CallTest {
-    protected static EntityManagerFactory emf;
-
-    protected EntityManager em;
-
-    @BeforeClass
-    public static void createEntityManagerFactory() {
-        emf = Persistence.createEntityManagerFactory("em");
-    }
-
-    @AfterClass
-    public static void closeEntityManagerFactory() {
-        emf.close();
-    }
-
-    @Before
-    public void beginTransaction() {
-        em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.createQuery("DELETE FROM Call").executeUpdate();
-    }
-
-    @After
-    public void rollbackTransaction() {
-        if (em.getTransaction().isActive()) {
-            em.getTransaction().rollback();
-        }
-
-        if (em.isOpen()) {
-            em.close();
-        }
-    }
+public class CallTest extends DBDependentTest {
 
     @Test
     public void addRemoveCall() {
@@ -56,5 +23,26 @@ public class CallTest {
         assertNotNull(dbCall);
         assertSame(call, dbCall);
         em.remove(call);
+    }
+
+    @Test
+    public void findCallByNumber() {
+        Call call1 = new Call("111", 1);
+        Call call2 = new Call("112", 1);
+        Call call3 = new Call("222", 1);
+        em.persist(call1);
+        em.persist(call2);
+        em.persist(call3);
+
+        List<Call> calls = (List<Call>)em.createNamedQuery("Call.getAllByPhoneNumber").setParameter("phoneNumber", "111").getResultList();
+        assertNotNull(calls);
+        assertEquals(1, calls.size());
+        assertSame(call1, calls.get(0));
+
+        calls = (List<Call>)em.createNamedQuery("Call.getAllByPhoneNumber").setParameter("phoneNumber", "2").getResultList();
+        assertNotNull(calls);
+        assertEquals(2, calls.size());
+        assertTrue(calls.contains(call2));
+        assertTrue(calls.contains(call3));
     }
 }

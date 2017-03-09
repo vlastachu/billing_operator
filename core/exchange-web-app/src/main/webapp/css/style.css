@@ -1,21 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans');
 
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
 
-
-th {
-    padding: 10px;
-    height: 30px;
-}
-tr {
-    text-align: center;
-    padding: 10px;
-    height: 30px;
+.hor-padding {
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+.title {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
 
-td{
-    width: 120px;
+.navbar-brand {
+    font-family: 'Alegreya Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+}
+
+.nav-link {
+    font-family: 'Alegreya Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1199px) {
+    .hor-padding {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+@media (max-width: 991px) {
+    .hor-padding {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .title {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
 }

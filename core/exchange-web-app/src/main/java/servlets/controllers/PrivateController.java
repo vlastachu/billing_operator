@@ -73,7 +73,14 @@ public class PrivateController extends HttpServlet {
         User user;
         switch (request.getServletPath()) {
             case "/calls":
-                List<Call> calls = callManager.getCalls();
+                List<Call> calls;
+                if (request.getParameter("query") != null) {
+                    request.setAttribute("query", request.getParameter("query"));
+                    calls = callManager.getCallsByPhoneNumber(request.getParameter("query"));
+                } else {
+                    request.setAttribute("query", "");
+                    calls = callManager.getCalls();
+                }
                 Tariff tariff = Tariff.getDefaultLocalTariff();
                 request.setAttribute("calls", calls);
                 request.setAttribute("tariff", tariff);
@@ -118,7 +125,7 @@ public class PrivateController extends HttpServlet {
                 if (session != null) {
                     session.invalidate();
                 }
-                response.sendRedirect("/ewa-app/exchange");
+                response.sendRedirect("/ewa-app/calls");
                 break;
             default:
                 break;
