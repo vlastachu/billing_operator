@@ -16,7 +16,7 @@ public class DBDependentTest {
 
     @BeforeClass
     public static void createEntityManagerFactory() {
-        emf = Persistence.createEntityManagerFactory("em");
+        emf = Persistence.createEntityManagerFactory("dev_test");
     }
 
     @AfterClass
