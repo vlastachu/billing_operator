@@ -18,10 +18,10 @@
     <h1 class="navbar-brand mb-0" href="#">Billing Operations</h1>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active hor-padding">
+            <li class="nav-item hor-padding">
                 <a class="nav-link" href="calls">Calls</a>
             </li>
-            <li class="nav-item hor-padding">
+            <li class="nav-item hor-padding active">
                 <a class="nav-link" href="accounts">Accounts</a>
             </li>
             <li class="nav-item hor-padding">
@@ -40,36 +40,23 @@
 <div class="container">
 
     <div class="row title justify-content-between col-12 col-lg-10 offset-lg-1">
-            <h1>Calls History</h1>
-            <button class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Register Call</button>
-    </div>
-    <div class="row">
-        <form class="form-inline col-12 col-lg-10 offset-lg-1" action="calls" method="get">
-            <div class="form-group my-2 col-9">
-                <label class="sr-only" for="query">Phone number</label>
-                <input type="text" class="form-control col" id="query" name="query" placeholder="Search by phone number" value="${query}">
-            </div>
-            <button type="submit" class="btn btn-primary col-3"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
-        </form>
+        <h1>Accounts</h1>
+        <button class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add new account</button>
     </div>
     <div class="row">
         <table class="table table-striped table-hover">
             <thead>
-                <tr>
-                    <th class="text-center">Phone number</th>
-                    <th class="text-center">Duration</th>
-                    <th class="text-center">Tariff per minute cost</th>
-                    <th class="text-center">Call cost</th>
-                </tr>
+            <tr>
+                <th class="text-center">Phone number</th>
+                <th class="text-center">Money</th>
+            </tr>
             </thead>
             <tbody>
-            <c:forEach var="call" items="${calls}">
-                    <tr>
-                        <td class="text-center"><strong> ${call.getPhoneNumber()}</strong></td>
-                        <td class="text-center">${call.getDuration()}</td>
-                        <td class="text-center">${tariff.getMoneyPerMinute()}</td>
-                        <td class="text-center">${tariff.getCallCost(call)}</td>
-                    </tr>
+            <c:forEach var="account" items="${accounts}">
+                <tr>
+                    <td class="text-center">${account.getPhoneNumber()}</td>
+                    <td class="text-center">${account.getMoney()}</td>
+                </tr>
             </c:forEach>
             </tbody>
         </table>

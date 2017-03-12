@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "PrivateController", urlPatterns = {"/trade", "/exchange", "/calls", "/accounts", "/logout" })
+@WebServlet(name = "PrivateController", urlPatterns = {"/trade", "/exchange", "/calls", "/accounts", "/tariffs", "/logout" })
 public class PrivateController extends HttpServlet {
 
     @EJB
@@ -90,6 +90,10 @@ public class PrivateController extends HttpServlet {
                 List<Account> accounts = accountManager.getAll();
                 request.setAttribute("accounts", accounts);
                 request.getRequestDispatcher("WEB-INF/private/accounts.jsp").forward(request, response);
+                break;
+            case "/tariffs":
+                request.setAttribute("price", Tariff.getDefaultLocalTariff().getMoneyPerMinute());
+                request.getRequestDispatcher("WEB-INF/private/tariffs.jsp").forward(request, response);
                 break;
             case "/exchange":
                 user = exchange.getUser(request.getUserPrincipal().getName());

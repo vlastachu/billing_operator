@@ -18,13 +18,13 @@
     <h1 class="navbar-brand mb-0" href="#">Billing Operations</h1>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active hor-padding">
+            <li class="nav-item hor-padding">
                 <a class="nav-link" href="calls">Calls</a>
             </li>
             <li class="nav-item hor-padding">
                 <a class="nav-link" href="accounts">Accounts</a>
             </li>
-            <li class="nav-item hor-padding">
+            <li class="nav-item hor-padding active">
                 <a class="nav-link" href="tariffs">Tariffs</a>
             </li>
         </ul>
@@ -39,40 +39,11 @@
 </nav>
 <div class="container">
 
-    <div class="row title justify-content-between col-12 col-lg-10 offset-lg-1">
-            <h1>Calls History</h1>
-            <button class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Register Call</button>
-    </div>
+    <h1 class="title">Tariffs</h1>
     <div class="row">
-        <form class="form-inline col-12 col-lg-10 offset-lg-1" action="calls" method="get">
-            <div class="form-group my-2 col-9">
-                <label class="sr-only" for="query">Phone number</label>
-                <input type="text" class="form-control col" id="query" name="query" placeholder="Search by phone number" value="${query}">
-            </div>
-            <button type="submit" class="btn btn-primary col-3"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
-        </form>
-    </div>
-    <div class="row">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th class="text-center">Phone number</th>
-                    <th class="text-center">Duration</th>
-                    <th class="text-center">Tariff per minute cost</th>
-                    <th class="text-center">Call cost</th>
-                </tr>
-            </thead>
-            <tbody>
-            <c:forEach var="call" items="${calls}">
-                    <tr>
-                        <td class="text-center"><strong> ${call.getPhoneNumber()}</strong></td>
-                        <td class="text-center">${call.getDuration()}</td>
-                        <td class="text-center">${tariff.getMoneyPerMinute()}</td>
-                        <td class="text-center">${tariff.getCallCost(call)}</td>
-                    </tr>
-            </c:forEach>
-            </tbody>
-        </table>
+        <p>
+            There is only one tariff with price equal ${price}&#162; per minute.
+        </p>
     </div>
 </div>
 </body>
