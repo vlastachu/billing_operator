@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/style.css"/>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="js/bootstrap.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,7 +41,44 @@
 
     <div class="row title justify-content-between col-12 col-lg-10 offset-lg-1">
             <h1>Calls History</h1>
-            <button class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Register Call</button>
+            <button id="register-call-button" class="btn btn-success" onclick="$('#register-call-form').slideToggle()">
+                <i class="fa fa-plus-circle" aria-hidden="true"></i> Register Call
+            </button>
+    </div>
+    <div id="register-call-form" class="row" style="display: none">
+        <form class="col-12 col-lg-10 offset-lg-1">
+
+            <div class="form-group row">
+                <label for="example-tel-input" class="col-sm-3 col-form-label">Phone Number</label>
+                <div class="col-sm-9">
+                    <input class="form-control" type="tel" value="" id="example-tel-input">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-time-input" class="col-sm-3 col-form-label">Time</label>
+                <div class="col-sm-9">
+                    <input class="form-control" type="time" value="00:00:00" id="example-time-input">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="tariff" class="col-sm-3 col-form-label">Tariff</label>
+                <div class="col-sm-9">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="tariff">
+                        <option selected>The single possible tariff</option>
+                        <option>Sample Text</option>
+                        <option>Sample Text</option>
+                        <option>Sample Text</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-sm-3 col-sm-9">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-phone-square" aria-hidden="true" style="margin-right: 8px;"></i>Submit
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
     <div class="row">
         <form class="form-inline col-12 col-lg-10 offset-lg-1" action="calls" method="get">

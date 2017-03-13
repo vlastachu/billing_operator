@@ -2,10 +2,7 @@ package Util;
 
 import model.Account;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -18,17 +15,18 @@ public class CSVHelper {
         }
     }
     private static List<List<String>> getCellsRowsFromFile(String csvFile) throws IOException {
-        final BufferedReader br = new BufferedReader(new FileReader(csvFile));
-        final String cvsSplitBy = ",";
-        final List<List<String>> rows = new ArrayList<>();
-        String line;
+        try (final BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            final String cvsSplitBy = ",";
+            final List<List<String>> rows = new ArrayList<>();
+            String line;
 
-        while ((line = br.readLine()) != null) {
-            List<String> cells = Arrays.asList(line.split(cvsSplitBy));
-            if (cells.size() > 0 && !(cells.size() == 1 && cells.get(0).isEmpty()))
-                rows.add(cells);
+            while ((line = br.readLine()) != null) {
+                List<String> cells = Arrays.asList(line.split(cvsSplitBy));
+                if (cells.size() > 0 && !(cells.size() == 1 && cells.get(0).isEmpty()))
+                    rows.add(cells);
+            }
+            return rows;
         }
-        return rows;
     }
 
     public static List<Account> getAccountsFromFile(String csvFile) throws IOException, WrongFileFormatException {
@@ -55,7 +53,12 @@ public class CSVHelper {
         return accounts;
     }
 
-    public static void saveAccountsToFile(String csvFile, List<Account> accounts) {
-
+    public static void saveAccountsToFile(String csvFile, List<Account> accounts) throws IOException {
+        final String newLine = System.getProperty("line.separator");
+        try(final FileWriter fw = new FileWriter(csvFile)) {
+            for (Account account : accounts) {
+                fw.write(account.getPhoneNumber() + ", " + account.getMoney() + newLine);
+            }
+        }
     }
 }

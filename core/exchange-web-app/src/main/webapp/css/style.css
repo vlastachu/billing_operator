@@ -4,6 +4,10 @@
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
 
+.container {
+    padding-top: 4.5rem;
+}
+
 .hor-padding {
     padding-left: 16px;
     padding-right: 16px;
@@ -48,4 +52,14 @@
         padding-top: 20px;
         padding-bottom: 10px;
     }
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: #F6F3F0;
+}
+
+.table-striped>tbody>tr:nth-child(odd):hover>td,
+.table-striped>tbody>tr:nth-child(odd):hover>th {
+    background-color: #E9E6E0;
 }

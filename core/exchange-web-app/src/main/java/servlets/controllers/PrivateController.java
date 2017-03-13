@@ -41,8 +41,33 @@ public class PrivateController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String userId = request.getUserPrincipal().getName();
-
+        String phoneNumber;
+        Integer money;
         switch (request.getServletPath()) {
+            case "/accounts":
+                phoneNumber = request.getParameter("phoneNumber");
+                money = Integer.valueOf(request.getParameter("money"));
+                try {
+                    if (request.getParameter("archiveAccount") != null) {
+                        accountManager.archiveAccountIfExist(new Account(phoneNumber, money));
+                        response.sendRedirect("/ewa-app/accounts");
+                        break;
+                    } else if (request.getParameter("addMoney") != null) {
+                        Integer moneyAdd = Integer.valueOf(request.getParameter("money_add"));
+                        accountManager.addMoney(new Account(phoneNumber, money), moneyAdd);
+                        response.sendRedirect("/ewa-app/accounts");
+                        break;
+                    }
+                } catch (AccountManager.NoSuchAccountException e) {
+                    response.sendRedirect("/ewa-app/accounts?error=NoSuchAccountException");
+                    break;
+                } catch (NumberFormatException e) {
+                    response.sendRedirect("/ewa-app/accounts?error=NumberFormatException");
+                    break;
+                }
+                accountManager.addAccount(new Account(phoneNumber, money));
+                response.sendRedirect("/ewa-app/accounts");
+                break;
             case "/exchange":
                 Long tradeId = Long.valueOf(request.getParameter("tradeId"));
                 exchange.acceptTrade(tradeId, userId);
@@ -89,6 +114,11 @@ public class PrivateController extends HttpServlet {
             case "/accounts":
                 List<Account> accounts = accountManager.getAll();
                 request.setAttribute("accounts", accounts);
+                if (request.getParameter("error") != null) {
+                    request.setAttribute("error", request.getParameter("error"));
+                } else {
+                    request.setAttribute("error", "");
+                }
                 request.getRequestDispatcher("WEB-INF/private/accounts.jsp").forward(request, response);
                 break;
             case "/tariffs":

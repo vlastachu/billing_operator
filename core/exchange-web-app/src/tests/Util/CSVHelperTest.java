@@ -3,15 +3,18 @@ package Util;
 import model.Account;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class CSVHelperTest {
-    public static final String csvResourceFolder = "./src/main/resources/test_csv/";
+    public static final String csvResourceFolder = "./src/tests/resources/test_csv/";
 
     @Test(expected = FileNotFoundException.class)
     public void notExistingFile() throws IOException {
@@ -68,4 +71,31 @@ public class CSVHelperTest {
         assertEquals(new Account("23", 34), accounts.get(1));
     }
 
+    @Test
+    public void emptySaveRead() throws IOException {
+        File tempFile = new File(csvResourceFolder + "temp");
+        try {
+            List<Account> accounts = new ArrayList<>();
+            CSVHelper.saveAccountsToFile(tempFile.getPath(), accounts);
+            List<Account> accountsFromFile = CSVHelper.getAccountsFromFile(tempFile.getPath());
+            assertEquals(accounts, accountsFromFile);
+        } finally {
+            Files.deleteIfExists(tempFile.toPath());
+        }
+    }
+
+    @Test
+    public void saveRead() throws IOException {
+        File tempFile = new File(csvResourceFolder + "temp");
+        try {
+            List<Account> accounts = new ArrayList<>();
+            accounts.add(new Account("6768845967", 228));
+            accounts.add(new Account("45798347598394787943", 142));
+            CSVHelper.saveAccountsToFile(tempFile.getPath(), accounts);
+            List<Account> accountsFromFile = CSVHelper.getAccountsFromFile(tempFile.getPath());
+            assertEquals(accounts, accountsFromFile);
+        } finally {
+            Files.deleteIfExists(tempFile.toPath());
+        }
+    }
 }
