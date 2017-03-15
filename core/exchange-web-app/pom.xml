@@ -77,7 +77,7 @@
     <build>
 
         <finalName>ewa-app</finalName>
-        <testSourceDirectory>src/tests</testSourceDirectory>
+        <testSourceDirectory>src/test/resources</testSourceDirectory>
 
         <plugins>
             <plugin>

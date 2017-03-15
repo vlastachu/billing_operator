@@ -1,5 +1,6 @@
 package Util;
 
+import beans.impl.AccountManagerImpl;
 import model.Account;
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class CSVHelperTest {
-    public static final String csvResourceFolder = "./src/tests/resources/test_csv/";
+    private static final String csvResourceFolder = AccountManagerImpl.class.getResource("/test_csv/").getPath();
 
     @Test(expected = FileNotFoundException.class)
     public void notExistingFile() throws IOException {
