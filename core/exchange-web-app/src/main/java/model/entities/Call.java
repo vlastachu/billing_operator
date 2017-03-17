@@ -27,12 +27,6 @@ public class Call {
     public Call() {
     }
 
-    public Call(int id, String phoneNumber, int duration) {
-        this.id = id;
-        this.phoneNumber = phoneNumber;
-        this.duration = duration;
-    }
-
     public Call(String phoneNumber, int duration) {
         this.phoneNumber = phoneNumber;
         this.duration = duration;

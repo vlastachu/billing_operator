@@ -13,6 +13,7 @@ public class CallTest extends DBDependentTest {
     @Test
     public void addRemoveCall() {
         Call call = new Call("111", 1);
+        call.setPhoneNumber("222");
         em.persist(call);
         assertTrue(em.contains(call));
 
