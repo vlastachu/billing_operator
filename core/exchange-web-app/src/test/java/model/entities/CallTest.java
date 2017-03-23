@@ -22,6 +22,7 @@ public class CallTest extends DBDependentTest {
         assertEquals(1, calls.size());
         Call dbCall = calls.get(0);
         assertNotNull(dbCall);
+        assertEquals(call.getPhoneNumber(), dbCall.getPhoneNumber());
         assertSame(call, dbCall);
         em.remove(call);
     }

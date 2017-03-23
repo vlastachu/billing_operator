@@ -1,11 +1,13 @@
 package entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
+@AllArgsConstructor
 @Entity
 @Cacheable(false)
 @Table(name = "USERS_TABLE")
@@ -13,7 +15,6 @@ import java.io.Serializable;
         @NamedQuery(name = "User.getById", query = "SELECT user FROM User user WHERE user.userId = :id")
 })
 public class User implements Serializable{
-
     @Id
     @Column(name = "USER_ID", nullable = false)
     private String userId;
@@ -26,18 +27,4 @@ public class User implements Serializable{
 
     @Column(name = "MONEY", nullable = false)
     private Double money;
-
-    public User() {
-    }
-
-    public User(String userId) {
-        this.userId = userId;
-    }
-
-    public User(String userId, String userPswd, String groupId) {
-        this.userId = userId;
-        this.userPswd = userPswd;
-        this.groupId = groupId;
-        this.money = 0D;
-    }
 }

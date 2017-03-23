@@ -24,7 +24,7 @@ public class UsersManagerImpl implements UsersManager {
         try {
             if (userId != null && userPswd != null && repeatedPswd != null && !userPswd.equals("") && userPswd.equals(repeatedPswd)) {
                 if (getUser(userId) == null) {
-                    User newUser = new User(userId, userPswd, (groupId != null) ? groupId : "user");
+                    User newUser = new User(userId, userPswd, (groupId != null) ? groupId : "user", 0D);
                     em.persist(newUser);
                     return 0;
                 }

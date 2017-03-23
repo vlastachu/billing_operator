@@ -9,6 +9,7 @@ public class TariffTest {
     @Test
     public void getDefaultLocalTariff() throws Exception {
         assertNotNull(Tariff.getDefaultLocalTariff());
+        assertEquals(10, Tariff.getDefaultLocalTariff().getMoneyPerMinute());
     }
 
     @Test
