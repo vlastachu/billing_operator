@@ -28,8 +28,8 @@ public class CallManagerImplTest extends DBDependentTest {
         List<Call> calls = callManagerImpl.getCalls();
         assertNotNull(calls);
         assertEquals(2, calls.size());
-        assertSame(call1, calls.get(1));
-        assertSame(call2, calls.get(0));
+        assertTrue(calls.contains(call1));
+        assertTrue(calls.contains(call2));
     }
 
     @Test
