@@ -35,7 +35,7 @@ public class PrivateController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String userId = request.getUserPrincipal().getName();
+        // String userId = request.getUserPrincipal().getName();
         String phoneNumber;
         Integer money;
         switch (request.getServletPath()) {

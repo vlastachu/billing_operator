@@ -27,4 +27,7 @@ public class User implements Serializable{
 
     @Column(name = "MONEY", nullable = false)
     private Double money;
+
+    public User() {
+    }
 }
