@@ -38,26 +38,49 @@
     </div>
 </nav>
 <div class="container">
-
     <div class="row title justify-content-between col-12 col-lg-10 offset-lg-1">
             <h1>Calls History</h1>
             <button id="register-call-button" class="btn btn-success" onclick="$('#register-call-form').slideToggle()">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i> Register Call
             </button>
     </div>
-    <div id="register-call-form" class="row" style="display: none">
-        <form class="col-12 col-lg-10 offset-lg-1">
+    <c:if test='${error.equals("NoSuchAccountException")}'>
+        <div class="row">
+            <div class="alert alert-danger col-lg-10 offset-lg-1">
+                <h4>No such account.</h4>
+                <p>The account you was trying to update was already removed by another user.</p>
+            </div>
+        </div>
+    </c:if>
+    <c:if test='${error.equals("NumberFormatException")}'>
+        <div class="row">
+            <div class="alert alert-danger col-lg-10 offset-lg-1">
+                <h4>Wrong number format.</h4>
+                <p>You pass number field with empty or incorrect string. Possibly you mistyped char instead of number.</p>
+            </div>
+        </div>
+    </c:if>
+    <c:if test='${error.equals("NotEnoughMoneyException")}'>
+        <div class="row">
+            <div class="alert alert-danger col-lg-10 offset-lg-1">
+                <h4>Not enough money on chosen account.</h4>
+                <p>After your operation the account will have negative money, that's unacceptable.</p>
+            </div>
+        </div>
+    </c:if>
+    <div id="register-call-form" class="row">
+        <form class="col-12 col-lg-10 offset-lg-1" method="post">
 
             <div class="form-group row">
-                <label for="example-tel-input" class="col-sm-3 col-form-label">Phone Number</label>
+                <label for="phoneNumber" class="col-sm-3 col-form-label">Phone Number</label>
                 <div class="col-sm-9">
-                    <input class="form-control" type="tel" value="" id="example-tel-input">
+                    <input class="form-control" type="tel" value="" id="phoneNumber" name="phoneNumber">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="example-time-input" class="col-sm-3 col-form-label">Time</label>
+                <label for="duration" class="col-sm-3 col-form-label">Time</label>
                 <div class="col-sm-9">
-                    <input class="form-control" type="time" value="00:00:00" id="example-time-input">
+                    <input class="form-control" type="time" value="00:00:00" id="duration" name="duration">
                 </div>
             </div>
             <div class="form-group row">
@@ -74,7 +97,7 @@
             <div class="form-group row">
                 <div class="offset-sm-3 col-sm-9">
                     <button type="submit" class="btn btn-primary">
-                        <i class="fa fa-phone-square" aria-hidden="true" style="margin-right: 8px;"></i>Submit
+                        <i class="fa fa-phone-square" aria-hidden="true"></i>Submit
                     </button>
                 </div>
             </div>

@@ -61,6 +61,14 @@
             </div>
         </div>
     </c:if>
+    <c:if test='${error.equals("NotEnoughMoneyException")}'>
+        <div class="row">
+            <div class="alert alert-danger col-lg-10 offset-lg-1">
+                <h4>Not enough money on chosen account.</h4>
+                <p>After your operation the account will have negative money, that's unacceptable.</p>
+            </div>
+        </div>
+    </c:if>
 
     <div id="add-account-form" class="row" style="display: none">
         <form class="col-12 col-lg-10 offset-lg-1" method="post">

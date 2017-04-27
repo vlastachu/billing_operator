@@ -34,15 +34,16 @@ public class PrivateController extends HttpServlet {
     protected void processPostRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        System.out.println("11request = [" + request + "], response = [" + response + "]");
         // String userId = request.getUserPrincipal().getName();
         String phoneNumber;
         Integer money;
         switch (request.getServletPath()) {
             case "/accounts":
-                phoneNumber = request.getParameter("phoneNumber");
-                money = Integer.valueOf(request.getParameter("money"));
                 try {
+                    Integer.valueOf(request.getParameter("phoneNumber")); // to put exception
+                    phoneNumber = request.getParameter("phoneNumber");
+                    money = Integer.valueOf(request.getParameter("money"));
                     if (request.getParameter("archiveAccount") != null) {
                         accountManager.archiveAccountIfExist(new Account(phoneNumber, money));
                         response.sendRedirect("/ewa-app/accounts");
@@ -56,6 +57,9 @@ public class PrivateController extends HttpServlet {
                 } catch (AccountManager.NoSuchAccountException e) {
                     response.sendRedirect("/ewa-app/accounts?error=NoSuchAccountException");
                     break;
+                } catch (AccountManager.NotEnoughMoneyException e) {
+                    response.sendRedirect("/ewa-app/accounts?error=NotEnoughMoneyException");
+                    break;
                 } catch (NumberFormatException e) {
                     response.sendRedirect("/ewa-app/accounts?error=NumberFormatException");
                     break;
@@ -63,6 +67,27 @@ public class PrivateController extends HttpServlet {
                 accountManager.addAccount(new Account(phoneNumber, money));
                 response.sendRedirect("/ewa-app/accounts");
                 break;
+            case "/calls":
+                try {
+                    phoneNumber = request.getParameter("phoneNumber");
+                    String[] minsec = request.getParameter("duration").split(":");
+                    if (minsec.length < 2) {
+                        throw new NumberFormatException();
+                    }
+                    Integer duration = Integer.valueOf(minsec[0]) * 60 + Integer.valueOf(minsec[1]);
+                    System.out.println("request = [" + request + "], response = [" + response + "]");
+                    callManager.addCall(new Call(phoneNumber, duration));
+                } catch (AccountManager.NoSuchAccountException e) {
+                    response.sendRedirect("/ewa-app/calls?error=NoSuchAccountException");
+                    break;
+                } catch (AccountManager.NotEnoughMoneyException e) {
+                    response.sendRedirect("/ewa-app/calls?error=NotEnoughMoneyException");
+                    break;
+                } catch (NumberFormatException e) {
+                    response.sendRedirect("/ewa-app/calls?error=NumberFormatException");
+                    break;
+                }
+                response.sendRedirect("/ewa-app/calls");
             default:
                 break;
         }
@@ -83,6 +108,12 @@ public class PrivateController extends HttpServlet {
                     request.setAttribute("query", "");
                     calls = callManager.getCalls();
                 }
+                if (request.getParameter("error") != null) {
+                    request.setAttribute("error", request.getParameter("error"));
+                } else {
+                    request.setAttribute("error", "");
+                }
+                // TODO write jsp error output and check
                 Tariff tariff = Tariff.getDefaultLocalTariff();
                 request.setAttribute("calls", calls);
                 request.setAttribute("tariff", tariff);

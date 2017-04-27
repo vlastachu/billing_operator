@@ -13,7 +13,7 @@
     <div align="center">
         <br>
         <br>
-        <h1>Wellcome to stock exchange!</h1>
+        <h1>Wellcome!</h1>
         <p><a href="/ewa-app/calls">Log in</a></p>
     </div>
     </body>

@@ -26,11 +26,14 @@ public class AccountManagerImpl implements AccountManager{
         }
     }
 
-    public void addMoney(Account account, int money) throws IOException, NoSuchAccountException {
+    public void addMoney(Account account, int money) throws IOException, NoSuchAccountException, NotEnoughMoneyException {
         List<Account> accounts = CSVHelper.getAccountsFromFile(csvPath);
         int index = accounts.indexOf(account);
         if (index == -1) {
             throw new NoSuchAccountException();
+        }
+        if (account.getMoney() + money < 0) {
+            throw new NotEnoughMoneyException();
         }
         Account removed = accounts.remove(index);
         accounts.add(index, new Account(removed.getPhoneNumber(), removed.getMoney() + money));
