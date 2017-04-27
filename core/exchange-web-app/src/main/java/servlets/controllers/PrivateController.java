@@ -113,7 +113,6 @@ public class PrivateController extends HttpServlet {
                 } else {
                     request.setAttribute("error", "");
                 }
-                // TODO write jsp error output and check
                 Tariff tariff = Tariff.getDefaultLocalTariff();
                 request.setAttribute("calls", calls);
                 request.setAttribute("tariff", tariff);
